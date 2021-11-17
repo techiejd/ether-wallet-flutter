@@ -24,30 +24,14 @@ class WalletHandler {
   Wallet get state => _store.state;
 
   Future<void> initialise() async {
-    final entropyMnemonic = _configurationService.getMnemonic();
     final privateKey = _configurationService.getPrivateKey();
 
-    if (entropyMnemonic != null && entropyMnemonic.isNotEmpty) {
-      _initialiseFromMnemonic(state.network, entropyMnemonic);
-      return;
-    }
     if (privateKey != null && privateKey.isNotEmpty) {
       _initialiseFromPrivateKey(state.network, privateKey);
       return;
     }
 
     throw Exception('Wallet could not be initialised.');
-  }
-
-  Future<void> _initialiseFromMnemonic(
-      NetworkType network, String entropyMnemonic) async {
-    final mnemonic = _addressService.entropyToMnemonic(entropyMnemonic);
-    final privateKey = await _addressService.getPrivateKey(mnemonic);
-    final address = await _addressService.getPublicAddress(privateKey);
-
-    _store.dispatch(InitialiseWallet(network, address.toString(), privateKey));
-
-    await refreshBalance();
   }
 
   Future<void> _initialiseFromPrivateKey(
@@ -107,7 +91,7 @@ class WalletHandler {
   }
 
   Future<void> resetWallet() async {
-    await _configurationService.setMnemonic(null);
+    await _configurationService.setPrivateKey(null);
     await _configurationService.setupDone(false);
   }
 

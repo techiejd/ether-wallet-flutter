@@ -48,10 +48,8 @@ dependencies:
   built_value: ^8.0.6
   built_collection: ^5.0.0
   ed25519_hd_key: ^2.1.0
-
-
-#dependency_overrides:
-#  meta: 1.6.0
+  steel_crypt: ^3.0.0
+  convert: ^3.0.1
 
 dev_dependencies:
   flutter_test:
