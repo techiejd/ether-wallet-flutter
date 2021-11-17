@@ -8,13 +8,7 @@ part of 'wallet_setup.dart';
 
 class _$WalletSetup extends WalletSetup {
   @override
-  final String? mnemonic;
-  @override
   final String? privateKey;
-  @override
-  final WalletCreateSteps step;
-  @override
-  final WalletSetupMethod method;
   @override
   final bool loading;
   @override
@@ -23,16 +17,8 @@ class _$WalletSetup extends WalletSetup {
   factory _$WalletSetup([void Function(WalletSetupBuilder)? updates]) =>
       (new WalletSetupBuilder()..update(updates)).build();
 
-  _$WalletSetup._(
-      {this.mnemonic,
-      this.privateKey,
-      required this.step,
-      required this.method,
-      required this.loading,
-      this.errors})
+  _$WalletSetup._({this.privateKey, required this.loading, this.errors})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(step, 'WalletSetup', 'step');
-    BuiltValueNullFieldError.checkNotNull(method, 'WalletSetup', 'method');
     BuiltValueNullFieldError.checkNotNull(loading, 'WalletSetup', 'loading');
   }
 
@@ -47,10 +33,7 @@ class _$WalletSetup extends WalletSetup {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WalletSetup &&
-        mnemonic == other.mnemonic &&
         privateKey == other.privateKey &&
-        step == other.step &&
-        method == other.method &&
         loading == other.loading &&
         errors == other.errors;
   }
@@ -58,22 +41,13 @@ class _$WalletSetup extends WalletSetup {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, mnemonic.hashCode), privateKey.hashCode),
-                    step.hashCode),
-                method.hashCode),
-            loading.hashCode),
-        errors.hashCode));
+        $jc($jc(0, privateKey.hashCode), loading.hashCode), errors.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('WalletSetup')
-          ..add('mnemonic', mnemonic)
           ..add('privateKey', privateKey)
-          ..add('step', step)
-          ..add('method', method)
           ..add('loading', loading)
           ..add('errors', errors))
         .toString();
@@ -83,21 +57,9 @@ class _$WalletSetup extends WalletSetup {
 class WalletSetupBuilder implements Builder<WalletSetup, WalletSetupBuilder> {
   _$WalletSetup? _$v;
 
-  String? _mnemonic;
-  String? get mnemonic => _$this._mnemonic;
-  set mnemonic(String? mnemonic) => _$this._mnemonic = mnemonic;
-
   String? _privateKey;
   String? get privateKey => _$this._privateKey;
   set privateKey(String? privateKey) => _$this._privateKey = privateKey;
-
-  WalletCreateSteps? _step;
-  WalletCreateSteps? get step => _$this._step;
-  set step(WalletCreateSteps? step) => _$this._step = step;
-
-  WalletSetupMethod? _method;
-  WalletSetupMethod? get method => _$this._method;
-  set method(WalletSetupMethod? method) => _$this._method = method;
 
   bool? _loading;
   bool? get loading => _$this._loading;
@@ -113,10 +75,7 @@ class WalletSetupBuilder implements Builder<WalletSetup, WalletSetupBuilder> {
   WalletSetupBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _mnemonic = $v.mnemonic;
       _privateKey = $v.privateKey;
-      _step = $v.step;
-      _method = $v.method;
       _loading = $v.loading;
       _errors = $v.errors?.toBuilder();
       _$v = null;
@@ -141,12 +100,7 @@ class WalletSetupBuilder implements Builder<WalletSetup, WalletSetupBuilder> {
     try {
       _$result = _$v ??
           new _$WalletSetup._(
-              mnemonic: mnemonic,
               privateKey: privateKey,
-              step: BuiltValueNullFieldError.checkNotNull(
-                  step, 'WalletSetup', 'step'),
-              method: BuiltValueNullFieldError.checkNotNull(
-                  method, 'WalletSetup', 'method'),
               loading: BuiltValueNullFieldError.checkNotNull(
                   loading, 'WalletSetup', 'loading'),
               errors: _errors?.build());
