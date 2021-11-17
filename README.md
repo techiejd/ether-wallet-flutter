@@ -1,6 +1,6 @@
 ## Ethereum wallet using an [ERC-20](https://en.wikipedia.org/wiki/ERC-20) smart contract.
 
-A digital wallet app, developed in dart language and flutter framework. The idea is to help developers to understand how to build dApps using blockchain and associated technologies. This app can transfer tokens from one wallet to another, through an [ERC-20](https://en.wikipedia.org/wiki/ERC-20) Ethereum contract.
+A digital wallet app, developed in dart language and flutter framework. The idea is to test out possible brain wallet configurations.
 
 ### What's being used
 
@@ -9,6 +9,7 @@ A digital wallet app, developed in dart language and flutter framework. The idea
 - [Web3Dart](https://github.com/simolus3/web3dart) to interact with Ethereum blockchain
 - [Flutter hooks](https://github.com/rrousselGit/flutter_hooks) to manage widget life-cycle.
 - [Solidity](https://github.com/allanclempe/ether-wallet-contract) smart contract
+- [Steel Crypt](https://pub.dev/packages/steel_crypt) - crypto utils ported in dart to create keys from password/username combination.
 
 |                              Wallet                              |                              Change network                              |                                Transfer tokens                                |
 | :--------------------------------------------------------------: | :-------------------------------------------------------------------: | :----------------------------------------------------------------------: |
@@ -67,19 +68,12 @@ just be patient, the transaction might take a while to be processed.
 
 Feel free to check out the smart contract used in this project [https://github.com/allanclempe/ether-wallet-contract](https://github.com/allanclempe/ether-wallet-contract)
 
+### License & Credit
 
-### Buy me a coffee
+Fork of [allanclempe/ether-wallet-flutter](https://github.com/allanclempe/ether-wallet-flutter).
 
-If you enjoy my work, a small donation would be greatly appreciated.
-
-|                                    BTC                                     |                                     ETH                                      |
-| :------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
-| <img src="https://faucet.clempe.dev/images/btc-address.png" width="150" /> | <img src="https://faucet.clempe.dev/images/eth-address.png"  width="150"  /> |
-
-### License
-
-Copyright © 2019-present Allan Clempe. This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/allanclempe/ether-wallet-flutter/blob/master/LICENSE.txt) file.
+Copyright © 2021-present Juan David. This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/techiejd/ether-wallet-flutter/blob/master/LICENSE.txt) file.
 
 ---
 
-dart wallet cryto flutter eth smart contracts - by [Allan Clempe](https://twitter.com/aclempe)
+dart brain wallet crypto flutter eth smart contracts - by [Juan David](https://twitter.com/JdavidWhatsGood)
