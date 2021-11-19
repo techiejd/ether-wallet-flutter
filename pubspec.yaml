@@ -47,6 +47,7 @@ dependencies:
   ed25519_hd_key: ^2.1.0
   steel_crypt: ^3.0.0
   convert: ^3.0.1
+  flow_builder: ^0.0.6
 
 dev_dependencies:
   flutter_test:

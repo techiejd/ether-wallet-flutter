@@ -14,6 +14,7 @@ abstract class WalletSetup implements Built<WalletSetup, WalletSetupBuilder> {
 
   String? get privateKey;
 
+  // TODO(techiejd): Refactor loading to something that makes sense.
   bool get loading;
   BuiltList<String>? get errors;
 }

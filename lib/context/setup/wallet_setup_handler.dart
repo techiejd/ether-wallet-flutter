@@ -3,6 +3,7 @@ import 'dart:convert' show utf8;
 import 'dart:typed_data';
 
 import 'package:convert/convert.dart';
+import 'package:etherwallet/model/login_info.dart';
 import 'package:etherwallet/model/wallet_setup.dart';
 import 'package:etherwallet/service/address_service.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -15,7 +16,9 @@ class WalletSetupHandler {
 
   final Store<WalletSetup, WalletSetupAction> _store;
   final AddressService _addressService;
+  final LogInInfo _logInInfo = LogInInfo();
 
+  LogInInfo get logInInfo => _logInInfo;
   WalletSetup get state => _store.state;
 
   Future<bool> _importFromPrivateKey(String privateKey) async {
@@ -59,8 +62,9 @@ class WalletSetupHandler {
     return _uint8ListToHexString(privateKeyRaw);
   }
 
-  Future<bool> logIn(String username, String secret) async {
-    final privateKey = _createPrivateKey(username /* salt */, secret);
+  Future<bool> logIn() async {
+    final privateKey = _createPrivateKey(
+        _logInInfo.username! /* salt */, _logInInfo.password! /* secret */);
 
     return _importFromPrivateKey(privateKey);
   }
