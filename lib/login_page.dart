@@ -16,6 +16,7 @@ class LogInPage extends StatelessWidget {
       ),
       body: LogInForm(
         errors: store.state.errors?.toList(),
+        // TODO(techiejd): Refactor loading to somewhere that makes sense.
         onLogIn: !store.state.loading
             ? (username, passphrase) async {
                 if (!await store.logIn(username, passphrase)) {

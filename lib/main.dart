@@ -29,6 +29,7 @@ class MainApp extends StatelessWidget {
           initialRoute: '/',
           routes: getRoutes(context),
           navigatorObservers: [
+            // TODO(jddominguez): Not really sure what observers I want to put on here.
             FirebaseAnalyticsObserver(analytics: analytics),
           ],
           theme: ThemeData(
